@@ -1,7 +1,7 @@
 # matHandler
 Simple matlab file handle class for python 3.x
 
-<img src="example.png" alt="example" style="zoom:50%;" />
+<img src="example.png" alt="example" width="509" />
 
 
 
@@ -58,10 +58,10 @@ It doesn't support structure arrays so far.
 
 ## Dependencies
 
-h5py
-python-box
-os
-numpy
+h5py  
+python-box  
+os  
+numpy  
 
 
 

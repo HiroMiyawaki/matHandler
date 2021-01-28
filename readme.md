@@ -48,9 +48,12 @@ array([[1., 1., 1.],
 array(['hello', 'world'], dtype='<U5')
 ```
 
-
-
-
+## Install
+In your console
+```
+pip3 install git+https://github.com/HiroMiyawaki/matHandler
+```
+That's it!
 
 ## Limination
 

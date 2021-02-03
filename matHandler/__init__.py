@@ -34,7 +34,7 @@ class matHandler:
             for col in f[path][()]:
                 row=[]
                 for rIdx in range(len(col)):
-                    row.append(''.join(map(chr, f[col[rIdx]][:]))) 
+                    row.append(''.join(map(chr, map(int,f[col[rIdx]][:])))) 
                 res.append(row)
             res=numpy.array(res)
             if len(res)==1:

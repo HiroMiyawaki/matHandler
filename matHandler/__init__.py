@@ -33,6 +33,7 @@ class matHandler:
         with h5py.File(self.__filePath,'r') as f:
             if f[path][()].dtype=='u2':
                 row=(''.join(map(chr, f[path])))
+                res.append(row)
             else:
                 for col in f[path][()]:
                     row=[]

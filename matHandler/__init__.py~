@@ -31,22 +31,23 @@ class matHandler:
     def getStr(self,path):
         res=[]
         with h5py.File(self.__filePath,'r') as f:
-            print(f[path][()].dtype)
-            if f[path][()].dtype=='u2':
-                row=(''.join(map(chr, f[path])))
-            else:
-                for col in f[path][()]:
-                    row=[]
+            for col in f[path][()]:
+                row=[]
+                if col.dtype=='O':
                     for rIdx in range(len(col)):
                         row.append(''.join(map(chr, map(int,f[col[rIdx]][:]))))
-            res.append(row)
+                else:
+                    for rIdx in range(len(col)):
+                        row.append(''.join(map(chr, f[col[rIdx]])))
+
+                res.append(row)
             res=numpy.array(res)
             if len(res)==1:
                 res=res[0]
             if len(res.T)==1:
                 res=res.T[0] 
         return res
-
+            
     def __getName(self,h5f,keys,path):
         if keys=='':
             # print('key is empty')

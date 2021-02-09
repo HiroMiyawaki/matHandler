@@ -39,7 +39,7 @@ class matHandler:
                     row=[]
                     for rIdx in range(len(col)):
                         row.append(''.join(map(chr, map(int,f[col[rIdx]][:]))))
-                res.append(row)
+                    res.append(row)
             res=numpy.array(res)
             if len(res)==1:
                 res=res[0]

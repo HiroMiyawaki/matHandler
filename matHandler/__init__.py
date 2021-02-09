@@ -31,7 +31,7 @@ class matHandler:
     def getStr(self,path):
         res=[]
         with h5py.File(self.__filePath,'r') as f:
-            print(f[path][()].dtype)
+#            print(f[path][()].dtype)
             if f[path][()].dtype=='u2':
                 row=(''.join(map(chr, f[path])))
             else:

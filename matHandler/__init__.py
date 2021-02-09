@@ -33,8 +33,13 @@ class matHandler:
         with h5py.File(self.__filePath,'r') as f:
             for col in f[path][()]:
                 row=[]
-                for rIdx in range(len(col)):
-                    row.append(''.join(map(chr, map(int,f[col[rIdx]][:])))) 
+                if col.dtype=='O':
+                    for rIdx in range(len(col)):
+                        row.append(''.join(map(chr, map(int,f[col[rIdx]][:]))))
+                else:
+                    for rIdx in range(len(col)):
+                        row.append(''.join(map(chr, f[col[rIdx]])))
+
                 res.append(row)
             res=numpy.array(res)
             if len(res)==1:
